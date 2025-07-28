@@ -1,13 +1,20 @@
 {
-  "name": "zoom-clone",
+  "name": "meet-connect",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "uuid": "^9.0.0",
+    "peer": "^1.0.0",
+    "ejs": "^3.1.9"
+  },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "MeetConnect - A modern video conferencing platform with real-time communication, screen sharing, and chat features. Built with Node.js, Socket.io, and WebRTC technology."
 }
 

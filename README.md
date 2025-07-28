@@ -1,58 +1,117 @@
-# Zoom Clone
+# MeetConnect - Modern Video Conferencing Platform
 
-A real-time video conferencing application inspired by Zoom, built using modern web technologies. This project demonstrates the use of Socket.IO for real-time communication, enabling users to create or join rooms, share video, audio, and chat in a seamless experience.
+A feature-rich video conferencing application built with modern web technologies, providing seamless real-time communication with high-quality video and audio streaming.
 
-## Features
+## 🚀 Features
 
-- Real-time video and audio conferencing
-- Room creation and joining functionality
-- Live chat messaging
-- Responsive user interface
-- Peer-to-peer connections for efficient media streaming
+### Core Functionality
+- **High-Quality Video/Audio Streaming** - Crystal clear video and audio using WebRTC
+- **Real-Time Chat** - Instant messaging during video calls
+- **Screen Sharing** - Share your screen with participants
+- **Meeting Rooms** - Unique room generation with secure access
+- **Participant Management** - Track and display participant count
 
-## Technologies Used
+### User Experience
+- **Pre-Meeting Screen** - Generate and share invitation links before starting
+- **One-Click Copy** - Easy invitation link sharing with visual feedback
+- **Mute/Unmute** - Toggle microphone with visual indicators
+- **Video On/Off** - Control camera with status indicators
+- **Responsive Design** - Works seamlessly on desktop and mobile devices
 
-- **JavaScript**: Core application logic and client-side interactivity
-- **EJS (Embedded JavaScript Templates)**: Server-side rendering of dynamic HTML pages
-- **CSS**: Styling and responsive layout
-- **Socket.IO**: Real-time, bidirectional communication between clients and server
-- **Node.js & Express**: Backend server and routing
+### Security & Reliability
+- **Secure Connections** - WebRTC peer-to-peer connections
+- **Room Privacy** - Unique room IDs for secure meetings
+- **Real-Time Updates** - Live participant count and status
 
-## Getting Started
+## 🛠️ Technology Stack
 
-### Prerequisites
+- **Backend**: Node.js, Express.js
+- **Real-Time Communication**: Socket.io
+- **WebRTC**: PeerJS for peer-to-peer connections
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Template Engine**: EJS
+- **Styling**: Custom CSS with responsive design
 
-- [Node.js](https://nodejs.org/) installed on your machine
+## 📦 Installation
 
-### Installation
-
-1. Clone the repository:
+1. **Clone the repository**
    ```bash
-   git clone https://github.com/Melal-F/Zoom-clone.git
-   cd Zoom-clone
+   git clone <repository-url>
+   cd meet-connect
    ```
 
-2. Install dependencies:
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. Start the application:
+3. **Start the server**
    ```bash
    npm start
    ```
 
-4. Open your browser and navigate to `http://localhost:3000`
+4. **Access the application**
+   - Open your browser and navigate to `http://localhost:3030`
+   - You'll be automatically redirected to a unique meeting room
 
-## Usage
+## 🎯 How to Use
 
-- Create a new room or join an existing one by entering the room code.
-- Share the room link with others to start a video conference.
-- Use the chat panel to send real-time messages.
+### Starting a Meeting
+1. Visit `http://localhost:3030`
+2. You'll be redirected to a unique meeting room
+3. On the pre-meeting screen, copy the invitation link
+4. Share the link with others via email, messaging, etc.
+5. Click "Start Meeting" to begin the video call
 
-## Acknowledgements
+### Joining a Meeting
+1. Click on a shared invitation link
+2. Allow camera and microphone permissions
+3. You'll automatically join the meeting room
+4. Start communicating with other participants
 
-- [Socket.IO](https://socket.io/)
-- [Express](https://expressjs.com/)
-- [EJS](https://ejs.co/)
+### During the Meeting
+- **Mute/Unmute**: Click the microphone button to toggle audio
+- **Video On/Off**: Click the video button to toggle camera
+- **Chat**: Use the chat panel to send text messages
+- **Leave**: Click the leave button to exit the meeting
+
+## 🔧 Configuration
+
+### Environment Variables
+- `PORT`: Server port (default: 3030)
+- `NODE_ENV`: Environment mode (development/production)
+
+### Customization
+- Modify `public/style.css` for custom styling
+- Update `views/room.ejs` for UI changes
+- Configure WebRTC settings in `public/script.js`
+
+## 📱 Browser Support
+
+- Chrome 60+
+- Firefox 55+
+- Safari 12+
+- Edge 79+
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the ISC License.
+
+## 🙏 Acknowledgments
+
+- Built with [Socket.io](https://socket.io/) for real-time communication
+- Powered by [PeerJS](https://peerjs.com/) for WebRTC connections
+- Styled with modern CSS and Font Awesome icons
+
+---
+
+**MeetConnect** - Connecting people through seamless video communication.
 

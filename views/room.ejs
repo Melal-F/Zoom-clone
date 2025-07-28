@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zoom Clone</title>
+    <title>MeetConnect - Video Conferencing</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/peerjs@1.4.7/dist/peerjs.min.js"></script>
     <script src="/socket.io/socket.io.js" ></script>
     <link rel="stylesheet" href="style.css">
@@ -13,49 +14,77 @@
     </script>
 </head>
 <body>
-
-    <body>
-        <div class="main">
-            <!-- Video Section -->
-            <div class="main__left">
-                <div class="main__videos">
-                    <div id="video-grid">Video Grid</div>
-                </div>
-                <div class="main__controls">
-                    <div class="main__controls__buttons">
-                        <i class="fas fa-microphone"></i>
-                        <span>Mute</span>
-                    </div>
-                    <div class="main__controls__buttons">
-                        <i class="fas fa-video"></i>
-                        <span>Stop Video</span>
-                    </div>
-                    <div class="main__controls__buttons">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Security</span>
-                    </div>
-                    <div class="main__controls__buttons">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span class="leave-meeting">Leave</span>
-                    </div>
-                </div>
+    <!-- Pre-meeting screen -->
+    <div id="pre-meeting" class="pre-meeting">
+        <div class="pre-meeting-content">
+            <h1><i class="fas fa-video"></i> MeetConnect</h1>
+            <h2>Meeting Ready</h2>
+            <p>Share this invitation link with others to join your meeting:</p>
+            
+            <div class="invitation-link-container">
+                <input type="text" id="invitationLink" readonly value="">
+                <button id="copyLink" class="copy-btn">
+                    <i class="fas fa-copy"></i> Copy
+                </button>
             </div>
-    
-            <!-- Chat Section -->
-            <div class="main__right">
-                <div class="main__header">
-                    <h6>Chat</h6>
+            
+            <div class="meeting-info">
+                <p><strong>Meeting ID:</strong> <span id="meetingId"></span></p>
+                <p><strong>Participants:</strong> <span id="participantCount">1</span></p>
+            </div>
+            
+            <div class="meeting-actions">
+                <button id="startMeeting" class="start-btn">
+                    <i class="fas fa-play"></i> Start Meeting
+                </button>
+                <button id="leaveMeeting" class="leave-btn">
+                    <i class="fas fa-times"></i> Leave
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video call screen -->
+    <div id="video-call" class="main" style="display: none;">
+        <!-- Video Section -->
+        <div class="main__left">
+            <div class="main__videos">
+                <div id="video-grid">Video Grid</div>
+            </div>
+            <div class="main__controls">
+                <div class="main__controls__buttons" id="muteButton">
+                    <i class="fas fa-microphone"></i>
+                    <span>Mute</span>
                 </div>
-                <div class="chat-box">
-                    <!-- Chat messages will appear here -->
+                <div class="main__controls__buttons" id="stopVideoButton">
+                    <i class="fas fa-video"></i>
+                    <span>Stop Video</span>
                 </div>
-                <div class="chat-input">
-                    <input type="text" placeholder="Type a message...">
-                    <button>Send</button>
+                <div class="main__controls__buttons">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Security</span>
+                </div>
+                <div class="main__controls__buttons">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="leave-meeting">Leave</span>
                 </div>
             </div>
         </div>
 
+        <!-- Chat Section -->
+        <div class="main__right">
+            <div class="main__header">
+                <h6>Chat</h6>
+            </div>
+            <div class="chat-box">
+                <!-- Chat messages will appear here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type a message..." id="messageInput">
+                <button id="sendButton">Send</button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
